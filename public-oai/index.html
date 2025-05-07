@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenAI Voice Agent</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>OpenAI Voice Agent</h1>
+            <div class="controls">
+                <select id="agentSelect">
+                    <option value="greeter">Friendly Greeter</option>
+                    <option value="customerService">Customer Service</option>
+                    <option value="tourGuide">Tour Guide</option>
+                </select>
+            </div>
+        </header>
+
+        <div class="connection-status">
+            <div id="connectionBadge" class="badge disconnected">DISCONNECTED</div>
+            <div id="audioStatus" class="audio-status">Audio: Not initialized</div>
+        </div>
+
+        <div class="chat-container">
+            <div id="transcript"></div>
+            
+            <div class="message-input">
+                <input type="text" id="messageInput" placeholder="Type a message...">
+                <button id="sendMessageBtn" disabled>Send</button>
+            </div>
+        </div>
+
+        <div class="toolbar">
+            <button id="connectBtn">Connect</button>
+            
+            <div class="option">
+                <input type="checkbox" id="pushToTalkToggle">
+                <label for="pushToTalkToggle">Push to talk</label>
+                <button id="talkBtn" disabled>Talk</button>
+            </div>
+            
+            <div class="option">
+                <input type="checkbox" id="audioToggle" checked>
+                <label for="audioToggle">Audio playback</label>
+            </div>
+
+            <div class="option">
+                <input type="checkbox" id="logsToggle">
+                <label for="logsToggle">Show logs</label>
+            </div>
+        </div>
+
+        <div id="logs" class="logs-container hidden">
+            <h3>Logs</h3>
+            <div id="logEntries"></div>
+        </div>
+    </div>
+
+    <script src="client.js"></script>
+</body>
+</html>
